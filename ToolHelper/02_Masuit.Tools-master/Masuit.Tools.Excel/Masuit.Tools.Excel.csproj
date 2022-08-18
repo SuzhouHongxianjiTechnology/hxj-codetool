@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net461;net5;net6</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Version>1.2.2</Version>
+        <Authors>懒得勤快</Authors>
+        <Description>Masuit.Tools.Excel导出库，支持一些简单数据的导出，支持图片列</Description>
+        <Copyright>懒得勤快</Copyright>
+        <RepositoryUrl>https://github.com/ldqk/Masuit.Tools</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/ldqk/Masuit.Tools</PackageProjectUrl>
+        <PackageTags>Masuit.Tools,工具库,Utility,Excel,Extensions</PackageTags>
+        <PackageReleaseNotes>Masuit.Tools.Excel导出库</PackageReleaseNotes>
+        <Product>Masuit.Tools.Excel</Product>
+        <PackageId>Masuit.Tools.Excel</PackageId>
+        <RepositoryType>Github</RepositoryType>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+        <FileVersion>1.0.9</FileVersion>
+        <Company>masuit.org</Company>
+        <AssemblyVersion>1.0.9</AssemblyVersion>
+        <PackageLicenseUrl>https://github.com/ldqk/Masuit.Tools/blob/master/LICENSE</PackageLicenseUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|AnyCPU'">
+        <DocumentationFile>.\Masuit.Tools.Excel.xml</DocumentationFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="EPPlus" Version="6.0.6" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+</Project>

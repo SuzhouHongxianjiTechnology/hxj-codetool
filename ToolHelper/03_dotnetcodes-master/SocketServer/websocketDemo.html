@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>奎宇工作室websocket客户端，源码己托管:http://git.oschina.net/kuiyu/dotnetcodes</title>
+</head>
+<body>
+    <div>
+       
+        
+        
+     <input id="btnConnection" type="button" value="连接" />
+        <br />
+        <textarea cols="100" rows="10" id="txtContent"></textarea>
+        <br />
+        <input id="btnSend" type="button" value="发送" />
+        <hr />
+        <span id="msg"></span>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+  
+    <script>
+        var ws;
+        var url = "ws://127.0.0.1:2000/8989";
+
+        $("#btnConnection").click(function () {
+            if ("WebSocket" in window) {
+                ws = new WebSocket(url);
+            }
+            else if ("MozWebSocket" in window) {
+                ws = new MozWebSocket(url);
+            }
+            else
+                alert("浏览器版本过低，请升级您的浏览器。\r\n浏览器要求：IE10+/Chrome14+/FireFox7+/Opera11+");
+
+            //注册各类回调
+            ws.onopen = function () {
+                $("#msg").append("连接服务器成功<br/>");
+                ws.send("己连接");
+
+            }
+
+            ws.onclose = function () {
+                $("#msg").append("与服务器断开连接<br/>");
+            }
+            ws.onerror = function () {
+                $("#msg").append("数据传输发生错误<br/>");
+            }
+            ws.onmessage = function (receiveMsg) {
+                $("#msg").append(receiveMsg.data + "<br/>"); 
+            }
+        });
+        $("#btnSend").click(function () {
+            var txt = $("#txtContent").val();
+            ws.send(txt);
+        })
+    </script>
+
+</body>
+</html>
