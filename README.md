@@ -170,7 +170,7 @@ Install-Package Masuit.LuceneEFCore.SearchEngine_Guid
 ```
 ### 官方文档
 https://github.com/ldqk/Masuit.LuceneEFCore.SearchEngine
-## [12_CacheManager](https://github.com/MichaCo/CacheManagere)
+## [12_CacheManager](https://github.com/MichaCo/CacheManager)
 ### 介绍
 一个非常实用的缓存中间件，CacheManager 是用 C＃ 编写的 .NET 的开源缓存抽象层。 它支持各种缓存提供程序并实现许多高级功能。CacheManager 软件包的主要目标是使开发人员的生活更轻松，甚至可以处理非常复杂的缓存方案。借助CacheManager，可以实现多层缓存，例如 只需几行代码，即可在分布式缓存之前进行进程内缓存。CacheManager 不仅仅是统一各种缓存提供程序的编程模型的接口，这将使以后在项目中更改缓存策略变得非常容易。 它还提供了其他功能，例如缓存同步，并发更新，序列化，事件，性能计数器...开发人员只有在需要时才可以选择加入这些功能。
 ### 版本支持
@@ -178,7 +178,7 @@ https://github.com/ldqk/Masuit.LuceneEFCore.SearchEngine
 >=.NET Framework 4.6
 ```
 ### 官方文档
-https://github.com/MichaCo/CacheManagere
+https://github.com/MichaCo/CacheManager
 ## [13_htmldiff.net](https://github.com/Rohland/htmldiff.net)
 ### 介绍
 用于比较两个HTML文件/片段的库，并使用简单的HTML突出显示差异。基于 ruby 实现的 HTMLDiff 库移植到 .NET Core 下的。
@@ -197,16 +197,7 @@ https://github.com/Rohland/htmldiff.net
 ```
 ### 官方文档
 https://github.com/ValeraT1982/ObjectsComparer
-## [15_ObjectsComparer](https://github.com/ValeraT1982/ObjectsComparer)
-### 介绍
-一个对象比较器，有时候项目中会有两个对象比较里面哪些字段不一样，而不是简单地 equal 或 == 比较，这就比较麻烦，自己老老实实一个一个字段去判断显得也很繁琐，而ObjectsComparer 则是帮助你自动实现两个对象里面每个字段的逐一对比，甚至还会帮你生成差异结果告诉你某个字段值从什么变化成了什么。比较复杂对象的情况很普遍。有时对象可以包含嵌套元素，或者某些成员应从比较中排除（自动生成的标识符，创建/更新日期等），或者某些成员可以具有自定义比较规则（相同数据，但格式不同，例如电话号码）。开发这种小型框架是为了解决此类问题。简而言之，对象比较器是对象到对象的比较器，它允许逐个成员地递归比较对象，并为某些属性，字段或类型定义自定义比较规则。
-### 版本支持
-```shell
->=.NET Framework 4.6> Install-Package ObjectsComparer
-```
-### 官方文档
-https://github.com/ValeraT1982/ObjectsComparer
-## [16_Hangfire](https://github.com/HangfireIO/Hangfire)
+## [15_Hangfire](https://github.com/HangfireIO/Hangfire)
 ### 介绍
 定时任务框架
 ### 版本支持
