@@ -147,7 +147,7 @@ https://github.com/RRQM/TouchSocket
 ```
 ### 官方文档
 https://github.com/2881099/csredis
-## [10_AutoMappe](https://github.com/AutoMapper/AutoMapper)
+## [10_AutoMapper](https://github.com/AutoMapper/AutoMapper)
 ### 介绍
 AutoMapper is a simple little library built to solve a deceptively complex problem - getting rid of code that mapped one object to another. This type of code is rather dreary and boring to write, so why not invent a tool to do it for us?
 ### 版本支持
