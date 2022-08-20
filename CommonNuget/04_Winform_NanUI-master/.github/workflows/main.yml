@@ -1,0 +1,49 @@
+name: NanUI CI/CD Pipeline
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  ci:
+    runs-on: windows-2022
+    steps:
+      # Install the .NET Core workload
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+          
+      - name: Get .NET information
+        run: dotnet --info
+        
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: '[17.0,18.0)'
+          vs-prerelease: true
+
+      - name: Checkout repository
+        id: checkout_repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Clean .NET cache
+        id: clean_dotnet_cache
+        shell: pwsh
+        run: |
+          dotnet clean .\NetDimension.NanUI.sln
+          dotnet nuget locals all --clear
+
+      - name: Install NuGet packages
+        id: install_nuget_packages
+        shell: pwsh
+        run: |
+          nuget restore .\NetDimension.NanUI.sln
+
+      - name: Build solution
+        id: build_solution
+        shell: pwsh
+        run: |
+          msbuild .\NetDimension.NanUI.sln
+
+# Built with ❤ by [Pipeline Foundation](https://pipeline.foundation)

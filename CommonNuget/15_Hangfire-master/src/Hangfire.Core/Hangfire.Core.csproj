@@ -1,0 +1,206 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net45;net46;netstandard1.3;netstandard2.0;</TargetFrameworks>
+    <DebugType>portable</DebugType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <RootNamespace>Hangfire</RootNamespace>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45' or '$(TargetFramework)'=='net46'">
+    <DebugType>full</DebugType>
+    <DefineConstants>$(DefineConstants);FEATURE_CRONDESCRIPTOR;FEATURE_OWIN;</DefineConstants>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="MoreLinq.Source.MoreEnumerable.Pairwise" Version="1.0.1" />
+    <PackageReference Include="LibLog" Version="1.5.0" />
+    <PackageReference Include="Cronos" Version="0.7.1" />
+    <PackageReference Include="StackTraceFormatter.Source" Version="1.1.0" />
+    <PackageReference Include="StackTraceParser.Source" Version="1.3.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)'=='net45' or '$(TargetFramework)'=='net46'">
+    <PackageReference Include="Owin" Version="1.0" />
+    <PackageReference Include="CronExpressionDescriptor" Version="1.21.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Owin" Version="3.0.1" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard1.3'">
+    <PackageReference Include="System.Threading.Thread" Version="4.0.0" />
+    <PackageReference Include="System.Threading.ThreadPool" Version="4.0.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <PackageReference Include="Microsoft.CSharp" Version="4.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard1.3' or '$(TargetFramework)'=='netstandard2.0'">
+    <Compile Remove="AppBuilderExtensions.cs" />
+    <Compile Remove="Dashboard/Owin/**" />
+    <Compile Remove="Obsolete/**" />
+    <Compile Include="Obsolete/CreateJobFailedException.cs" />
+    <Compile Include="Obsolete/IServerComponent.cs" />
+    <Compile Include="Obsolete/IServerProcess.cs" />
+    <Compile Include="Obsolete/Job.Obsolete.cs" />
+    <Compile Include="Obsolete/ServerWatchdogOptions.cs" />
+    <Compile Include="Obsolete/StateContext.cs" />
+  </ItemGroup>
+  
+  <!-- Full MSBuild is required to generate Razor classes -->
+  <PropertyGroup>
+    <MSBuild14FullPath>$(MSBuildProgramFiles32)\MSBuild\14.0\bin\MSBuild.exe</MSBuild14FullPath>
+    <MSBuildCurrentFullPath>$(MSBuildBinPath)\MSBuild.exe</MSBuildCurrentFullPath>
+    <RazorProjectFile>Razor.build</RazorProjectFile>
+    <InnerTargets>GenerateRazorClasses;Build</InnerTargets>
+  </PropertyGroup>
+
+  <Target Name="GenerateRazorClasses">
+    <Exec Command="&quot;$(MSBuildCurrentFullPath)&quot; $(RazorProjectFile) /v:quiet /nologo" Condition="Exists('$(MSBuildCurrentFullPath)')" />
+    <Exec Command="&quot;$(MSBuild14FullPath)&quot; $(RazorProjectFile) /v:quiet /nologo" Condition="Exists('$(MSBuild14FullPath)') and !Exists('$(MSBuildCurrentFullPath)')" />
+    <Warning Text="Classes for Razor files (*.cshtml) weren't re-generated: couldn't find the '$(MSBuild14FullPath)' or '$(MSBuildCurrentFullPath)' file" Condition="!Exists('$(MSBuild14FullPath)') and !Exists('$(MSBuildCurrentFullPath)')" />
+  </Target>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="Dashboard\Content\css\bootstrap.min.css" />
+    <EmbeddedResource Include="Dashboard\Content\css\Chart.min.css" />
+    <EmbeddedResource Include="Dashboard\Content\css\hangfire.css" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.eot" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.svg" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.woff" />
+    <EmbeddedResource Include="Dashboard\Content\fonts\glyphicons-halflings-regular.woff2" />
+    <EmbeddedResource Include="Dashboard\Content\js\bootstrap.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\hangfire.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\jquery-3.6.0.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\moment-with-locales.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\Chart.min.js" />
+    <EmbeddedResource Include="Dashboard\Content\js\chartjs-plugin-streaming.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Dashboard\Content\resx\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Hangfire.Dashboard.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Update="Dashboard\Content\resx\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Dashboard\Pages\_BlockMetric.cshtml.cs">
+      <DependentUpon>_BlockMetric.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_BlockMetric.cs">
+      <DependentUpon>_BlockMetric.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Breadcrumbs.cshtml.cs">
+      <DependentUpon>_Breadcrumbs.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Breadcrumbs.cs">
+      <DependentUpon>_Breadcrumbs.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_ErrorAlert.cshtml.cs">
+      <DependentUpon>_ErrorAlert.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_InlineMetric.cshtml.cs">
+      <DependentUpon>_InlineMetric.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_InlineMetric.cs">
+      <DependentUpon>_InlineMetric.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Navigation.cshtml.cs">
+      <DependentUpon>_Navigation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Paginator.cshtml.cs">
+      <DependentUpon>_Paginator.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_Paginator.cs">
+      <DependentUpon>_Paginator.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_PerPageSelector.cshtml.cs">
+      <DependentUpon>_PerPageSelector.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_PerPageSelector.cs">
+      <DependentUpon>_PerPageSelector.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_SidebarMenu.cshtml.cs">
+      <DependentUpon>_SidebarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\_SidebarMenu.cs">
+      <DependentUpon>_SidebarMenu.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\AwaitingJobsPage.cshtml.cs">
+      <DependentUpon>AwaitingJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\DeletedJobsPage.cshtml.cs">
+      <DependentUpon>DeletedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\EnqueuedJobsPage.cshtml.cs">
+      <DependentUpon>EnqueuedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\EnqueuedJobsPage.cs">
+      <DependentUpon>EnqueuedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\FailedJobsPage.cshtml.cs">
+      <DependentUpon>FailedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\FetchedJobsPage.cshtml.cs">
+      <DependentUpon>FetchedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\FetchedJobsPage.cs">
+      <DependentUpon>FetchedJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\HomePage.cshtml.cs">
+      <DependentUpon>HomePage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\HomePage.cs">
+      <DependentUpon>HomePage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\JobDetailsPage.cshtml.cs">
+      <DependentUpon>JobDetailsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\JobDetailsPage.cs">
+      <DependentUpon>JobDetailsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\LayoutPage.cshtml.cs">
+      <DependentUpon>LayoutPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\LayoutPage.cs">
+      <DependentUpon>LayoutPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\ProcessingJobsPage.cshtml.cs">
+      <DependentUpon>ProcessingJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\QueuesPage.cshtml.cs">
+      <DependentUpon>QueuesPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\RecurringJobsPage.cshtml.cs">
+      <DependentUpon>RecurringJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\RetriesPage.cshtml.cs">
+      <DependentUpon>RetriesPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\ScheduledJobsPage.cshtml.cs">
+      <DependentUpon>ScheduledJobsPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\ServersPage.cshtml.cs">
+      <DependentUpon>ServersPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Dashboard\Pages\SucceededJobs.cshtml.cs">
+      <DependentUpon>SucceededJobs.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net45;netstandard2.0;net5.0</TargetFrameworks>
+		<Version>1.26.5</Version>
+	</PropertyGroup>
+	<PropertyGroup>
+		<AssemblyName>MiniExcel</AssemblyName>
+		<Title>MiniExcel</Title>
+		<Product>MiniExcel</Product>
+		<PackageTags>excel;xlsx;csv;micro-helper;mini;openxml;helper;</PackageTags>
+		<Description>Fast, Low-Memory, Easy Excel .NET helper to import/export/template spreadsheet
+
+Github : https://github.com/shps951023/MiniExcel
+Gitee : https://gitee.com/dotnetchina/MiniExcel
+Issues : https://github.com/shps951023/MiniExcel/issues
+Todo : https://github.com/shps951023/MiniExcel/projects/1?fullscreen=true
+</Description>
+		<Authors>LIN,WEI-HAN</Authors>
+		<PackageId>MiniExcel</PackageId>
+		<Copyright>LIN,WEI-HAN, 2021 onwards</Copyright>
+		<NeutralLanguage>en</NeutralLanguage>
+		<license>https://raw.githubusercontent.com/shps951023/MiniExcel/master/LICENSE</license>
+		<RootNamespace>MiniExcelLibs</RootNamespace>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/shps951023/MiniExcel</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/shps951023/MiniExcel</RepositoryUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReleaseNotes>Please Check [Release Notes](https://github.com/shps951023/MiniExcel/tree/master/docs)</PackageReleaseNotes>
+		<RepositoryType>Github</RepositoryType>
+	</PropertyGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net461'">
+		<Reference Include="System.IO.Compression" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net45'">
+		<Reference Include="System.IO.Compression" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="icon.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>
