@@ -34,6 +34,7 @@
 |[13_htmldiff.net](https://github.com/Rohland/htmldiff.net)|用于比较两个HTML文件/片段的库，并使用简单的HTML突出显示差异。基于 ruby 实现的 HTMLDiff 库移植到 .NET Core 下的。|https://github.com/Rohland/htmldiff.net|
 |[14_ObjectsComparer](https://github.com/ValeraT1982/ObjectsComparer)|一个对象比较器，有时候项目中会有两个对象比较里面哪些字段不一样，而不是简单地 equal 或 == 比较，这就比较麻烦，自己老老实实一个一个字段去判断显得也很繁琐，而ObjectsComparer 则是帮助你自动实现两个对象里面每个字段的逐一对比，甚至还会帮你生成差异结果告诉你某个字段值从什么变化成了什么。比较复杂对象的情况很普遍。有时对象可以包含嵌套元素，或者某些成员应从比较中排除（自动生成的标识符，创建/更新日期等），或者某些成员可以具有自定义比较规则（相同数据，但格式不同，例如电话号码）。开发这种小型框架是为了解决此类问题。简而言之，对象比较器是对象到对象的比较器，它允许逐个成员地递归比较对象，并为某些属性，字段或类型定义自定义比较规则。|https://github.com/ValeraT1982/ObjectsComparer|
 |[15_Hangfire](https://github.com/HangfireIO/Hangfire)|定时任务框架|https://github.com/HangfireIO/Hangfire|
+|[16_CliFx](https://github.com/Tyrrrz/CliFx)|命令行增强工具：CliFx is a simple to use, yet powerful framework for building command line applications. Its primary goal is to completely take over the user input layer, allowing you to forget about infrastructural concerns and instead focus on writing your application.|https://github.com/Tyrrrz/CliFx|
 
 # Project
 | | | |
