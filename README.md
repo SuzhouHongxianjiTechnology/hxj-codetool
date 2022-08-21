@@ -43,6 +43,7 @@
 |-|-|-|
 |Name|Description|Doc|
 |[01_NETworkManager](https://github.com/BornToBeRoot/NETworkManager)|管理和解决网络问题的工具。它集成了 IP 和端口扫描、WiFi 分析器、跟踪路由、DNS 查询等工具。|https://github.com/BornToBeRoot/NETworkManager|
+|[02_NadekoBot](https://github.com/bugladen/NadekoBot)|Nadeko Discord chatbot I made in c#, using Discord.net library. You can also create a very basic web-ui with the data that is in the Parse DB. example  ##This section will guide you through how to setup NadekoBot After you have cloned this repo, move the data from the DLLs folder to the bin/debug. Those are part of the libraries you will need for your project. The other part should resolve after you start the project for the first time. All the references are shown in this image.  In your bin/debug folder (or next to your exe), you must have a file called 'credentials.json' in which you will store all the necessary data to make the bot know who the owner is, where to store data, etc.|https://github.com/bugladen/NadekoBot|
 
 # 如何贡献
 如果你希望参与贡献，欢迎 [Pull Request](https://github.com/AlbertZhaoz/NET_AlbertzhaozToolHelper/pulls)，或给我们 [报告 Bug](https://github.com/AlbertZhaoz/NET_AlbertzhaozToolHelper/issues) 。
