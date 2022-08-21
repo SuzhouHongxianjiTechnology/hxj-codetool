@@ -36,6 +36,7 @@
 |[15_Hangfire](https://github.com/HangfireIO/Hangfire)|定时任务框架|https://github.com/HangfireIO/Hangfire|
 |[16_CliFx](https://github.com/Tyrrrz/CliFx)|命令行增强工具：CliFx is a simple to use, yet powerful framework for building command line applications. Its primary goal is to completely take over the user input layer, allowing you to forget about infrastructural concerns and instead focus on writing your application.|https://github.com/Tyrrrz/CliFx|
 |[17_MarkdownSharp](https://github.com/StackExchange/MarkdownSharp/)|用于MarkDown文件向Html文件转换的包|https://github.com/StackExchange/MarkdownSharp/|
+|[18_CliWrap](https://github.com/Tyrrrz/CliWrap)|命令行增强工具，可以在代码中调用各种执行程序，并传入参数，例如git,powershell,bash,docker等。CliWrap is a library for interacting with external command line interfaces. It provides a convenient model for launching processes, redirecting input and output streams, awaiting completion, handling cancellation, and more.|https://github.com/Tyrrrz/CliWrap|
 
 # Project
 | | | |
