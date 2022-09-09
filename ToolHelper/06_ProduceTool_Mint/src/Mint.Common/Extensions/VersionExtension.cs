@@ -1,4 +1,4 @@
-namespace Mint.Common.Extensions
+namespace Mint.Common
 {
     using System;
 

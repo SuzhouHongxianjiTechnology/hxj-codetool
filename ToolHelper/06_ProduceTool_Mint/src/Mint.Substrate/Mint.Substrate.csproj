@@ -1,18 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Sdk Name="Microsoft.Build.CentralPackageVersions" Version="2.0.1" />
+
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
+
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)src\Mint.Common\Mint.Common.csproj" />
+    <ProjectReference Include="$(MsBuildStartupDirectory)\src\Mint.Common\Mint.Common.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Update="settings\*.*" CopyToOutputDirectory="Always" />
+    <None Update="*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
+
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>$(MSBuildProjectName).Test</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
+
 </Project>

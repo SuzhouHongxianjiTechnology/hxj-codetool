@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Produce</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(MsBuildStartupDirectory)\src\Mint.Common\Mint.Common.csproj" />
+    <ProjectReference Include="$(MsBuildStartupDirectory)\src\Mint.Substrate\Mint.Substrate.csproj" />
+  </ItemGroup>
+
+</Project>

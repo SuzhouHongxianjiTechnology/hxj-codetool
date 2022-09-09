@@ -1,0 +1,28 @@
+FUSE.Paxos.Esent.dll
+sources\dev\common\src\FUSE.Paxos\FUSE.Paxos.Esent\FUSE.Paxos.Esent.csproj
+
+FUSE.Paxos.Network.dll
+sources\dev\common\src\FUSE.Paxos\FUSE.Paxos.Network\FUSE.Paxos.Network.csproj
+
+# ------------------------------------------------------------
+
+Microsoft.Exchange.Common.StructuredLogging.dll
+sources\dev\common\src\StructuredLogging\Microsoft.Exchange.Common.StructuredLogging.csproj
+
+Microsoft.Exchange.HttpProxy.Common.dll
+sources\dev\cafe\src\Common\Microsoft.Exchange.HttpProxy.Common.csproj
+
+Microsoft.Exchange.Management.UnifiedPolicy.dll
+sources\dev\Management\src\Management\UnifiedPolicy\Microsoft.Exchange.Management.UnifiedPolicy.csproj
+
+Microsoft.Exchange.Search.OperatorSchema.IO.dll
+sources\dev\Search\src\OperatorSchemaIO\Microsoft.Exchange.Search.OperatorSchemaIO.csproj
+
+Microsoft.Exchange.Search.TokenOperators.dll (jinwei)
+sources\dev\Search\src\TokenOperators\Microsoft.Exchange.Search.TokenOperators.csproj
+
+Microsoft.Exchange.VariantConfiguration.WindowsSettings.dll
+sources\dev\common\src\VariantConfiguration\WindowsSettings\Microsoft.Exchange.VariantConfiguration.WindowsSettings.csproj
+
+Microsoft.Office.Compliance.Utilities.AzureManagement.dll
+sources\dev\EDiscovery\src\Utilities\AzureManagement\AzureManagement.csproj

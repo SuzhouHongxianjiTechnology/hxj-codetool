@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Mapi</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(MsBuildStartupDirectory)\src\Mint.Common\Mint.Common.csproj" />
+    <ProjectReference Include="$(MsBuildStartupDirectory)\src\Mint.Database\Mint.Database.csproj" />
+    <ProjectReference Include="$(MsBuildStartupDirectory)\src\Mint.Substrate\Mint.Substrate.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Exchange.SystemWebAdapters">
+      <HintPath>Reflection\Microsoft.Exchange.SystemWebAdapters.dll</HintPath>
+    </Reference>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="*.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="_cache.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+{
+    "editor.codeLens": true,
+    "files.exclude": {
+        "desktop.ini": true,
+        "**/.git": true,
+        "**/.vs": true,
+        "**/bin": true,
+        "**/obj": true,
+        "**/TestResults": true,
+    },
+    "files.insertFinalNewline": true
+}

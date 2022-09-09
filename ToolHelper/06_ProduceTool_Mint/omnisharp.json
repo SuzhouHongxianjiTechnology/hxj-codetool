@@ -1,9 +1,5 @@
 {
     "FormattingOptions": {
-        "organizeImports": true,
-        "UseTabs": false,
-        "IndentationSize": 4,
-        "SpaceAfterCast": true,
-        "SpacingAroundBinaryOperator": "single"
+        "organizeImports": true
     }
 }
