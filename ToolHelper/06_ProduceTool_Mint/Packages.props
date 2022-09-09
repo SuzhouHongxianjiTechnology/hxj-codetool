@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PackageReference Update="coverlet.collector"            Version="[1.2.0]" />
+    <PackageReference Update="Microsoft.Build.Locator"       Version="[1.4.1]" />
+    <PackageReference Update="Microsoft.CodeAnalysis.Common" Version="[3.10.0]" />
+    <PackageReference Update="Microsoft.CodeAnalysis.CSharp" Version="[3.10.0]" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk"        Version="[16.5.0]" />
+    <PackageReference Update="MSTest.TestAdapter"            Version="[2.1.0]" />
+    <PackageReference Update="MSTest.TestFramework"          Version="[2.1.0]" />
+    <PackageReference Update="Neo4jClient"                   Version="[4.1.6]"/>
+    <PackageReference Update="Newtonsoft.Json"               Version="[13.0.1]"/>
+  </ItemGroup>
+</Project>

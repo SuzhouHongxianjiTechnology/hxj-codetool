@@ -1,0 +1,7 @@
+{
+    "AllTypesJson": "F:\\temp\\15.20.4583.000_AllTypes.json",
+    "ProductionURL": "http://dgt.corp.microsoft.com/api/graph/",
+    "Neo4j_Host": "neo4j://10.158.22.36:7687",
+    "Neo4j_User": "neo4j",
+    "Neo4j_Pass": "test1"
+}

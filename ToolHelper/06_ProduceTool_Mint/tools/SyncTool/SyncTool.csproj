@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Sdk Name="Microsoft.Build.CentralPackageVersions" Version="2.0.1" />
+  <PropertyGroup>
+    <AssemblyName>MG</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>Enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)src\Mint.Common\Mint.Common.csproj" />
+    <ProjectReference Include="$(SolutionDir)src\Mint.Substrate\Mint.Substrate.csproj" />
+  </ItemGroup>
+</Project>
