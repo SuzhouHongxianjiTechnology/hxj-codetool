@@ -1,0 +1,49 @@
+{
+  "Repo": {
+    "DefaultPath": "F:\\Repo\\producetool",
+    "CompanyToolEnlistmentPath": "$(DefaultPath)$\\tools\\path1st\\myenv.cmd"
+  },
+  "MsBuild": {
+    "Path": "ProgramFiles\\Microsoft Visual Studio\\2022\\Preview\\Common7\\Tools\\VsDevCmd.bat"
+  },
+  "AzureDevOps": {
+    "AzureDevOpsOrganizationUrl": "https://dev.azure.com/O365Exchange",
+    "PersonalAccessToken": "xxxx",
+    "ArtifactIDTemplate": "vstfs:///CodeReview/CodeReviewId/{0}/{1}"
+  },
+  "SerilogConfig": {
+    "ExceptionlessClientDefaultStartUpKey": "",
+    "SerilogFilePath": "D:\\SerilogFile\\serilog.txt"
+  },
+  "PersonalCrawling": {
+    "PersonalCrawlingSite": "https://www.cnblogs.com/",
+    "Expect100Continue": false,
+    "UseNagleAlgorithm": false,
+    "AllowWriteStreamBuffering": false,
+    "AcceptEncoding": "gzip,deflate",
+    "ContentType": "application/x-www-form-urlencoded",
+    "AllowAutoRedirect": false,
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36",
+    "Timeout": 5000,
+    "KeepAlive": true,
+    "Method": "GET",
+    "SiteJsonStoragePath": "F:\\AlbertZhao's Study\\producetool\\PersonalCrawlingSite.json"
+  },
+  "HelperInfo": {
+    "CmdInformation": "======================================\nalbert help:Show help infomation.\nalbert git \"commit your comments\":Push your code to remote repo with submission note.\nalbert chrepo \"repo path\":Change repo path.\nalbert crawl-inputuri:Crawl normal web info.\nalbert produce:Not support currently\nalbert azure:Not support currently\n======================================",
+    "RemoteRepoAddress": "Github: https://github.com/AlbertZhaohongyong/producetool.git"
+  },
+  "BagetRule": {
+    "NugetWebUrl": "http://albertzhao.cn222",
+    "NugetKey": "",
+    "DelteBagUrl": "{0}/api/v2/package/{1}/{2}",
+    "SearchBagUrl": "{0}/v3/search"
+  },
+  "SqlServer": {
+    "ConnectStr": "Server = .; Database = AlbertConfigDb; Trusted_Connection = True;MultipleActiveResultSets=true;Connect Timeout=500"
+  },
+  "RedisServer": {
+    "Configuration": "localhost",
+    "InstanceName": "albertzhao_"
+  }
+}

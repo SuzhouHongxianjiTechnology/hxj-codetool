@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Albert": {
+      "commandName": "Project",
+      "commandLineArgs": "baget push -p \"X:\\Repo\\producetool\\Albert.Commons\\bin\\Debug",
+      "environmentVariables": {
+        "\"ASPNETCORE_ENVIRONMENT\"": "\"Development\""
+      }
+    }
+  }
+}

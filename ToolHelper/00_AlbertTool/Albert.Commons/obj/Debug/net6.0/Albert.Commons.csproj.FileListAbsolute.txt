@@ -1,0 +1,12 @@
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\bin\Debug\net6.0\Albert.Commons.deps.json
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\bin\Debug\net6.0\Albert.Commons.dll
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\bin\Debug\net6.0\Albert.Commons.pdb
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\Albert.Commons.csproj.AssemblyReference.cache
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\Albert.Commons.GeneratedMSBuildEditorConfig.editorconfig
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\Albert.Commons.AssemblyInfoInputs.cache
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\Albert.Commons.AssemblyInfo.cs
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\Albert.Commons.csproj.CoreCompileInputs.cache
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\Albert.Commons.dll
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\refint\Albert.Commons.dll
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\Albert.Commons.pdb
+E:\SourceCode\14-CodeTool\ToolHelper\00_AlbertTool\Albert.Commons\obj\Debug\net6.0\ref\Albert.Commons.dll

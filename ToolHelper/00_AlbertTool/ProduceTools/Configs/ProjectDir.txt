@@ -1,0 +1,5 @@
+D:\src\producetool\ProduceTools
+D:\src\producetool\AlbertEFCore
+D:\src\producetool\AlbertZhao.cn
+D:\src\producetool\AlbertEFCore
+D:\src\producetool\Albert.Test

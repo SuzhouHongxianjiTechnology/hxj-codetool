@@ -1,0 +1,11 @@
+﻿sources\dev\common\src\OwaVariantConfiguration
+sources\dev\clients\src\strings
+sources\dev\data\src\ApplicationLogic.NetCore\Server.Extension
+sources\dev\UnifiedGroups\src\UnifiedGroups
+sources\dev\data\src\StoreObjects.Extensions
+sources\dev\data\src\UserPhotos
+sources\dev\Entities\src\Calendaring
+sources\dev\Entities\src\Common
+sources\dev\Entities\src\Remoting
+sources\dev\Entities\src\DataModel
+sources\dev\Entities\src\ShellService
