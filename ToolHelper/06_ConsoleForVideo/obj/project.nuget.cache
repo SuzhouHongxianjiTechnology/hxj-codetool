@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cW0zW8tk7IfXt5WKaNabgpKKT21H4joPsQgZl89HfiRtTe70kBnSrObW6hD/TvqTLHr0b2nfN1L9VEWvcqgfMA==",
+  "dgSpecHash": "L7vCfzBqGBZfjRg+8k/FdczRiQIYMkVs+7hzpM97gl26xbHq62L7iiWYP1E/PDGmiaC4HYIKvDVlooAQUSNAPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\szdxz\\Desktop\\ConsoleForVideo\\AutoRpa.csproj",
+  "projectFilePath": "E:\\SourceCode\\14-CodeTool\\ToolHelper\\06_ConsoleForVideo\\AutoRpa.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\szdxz\\.nuget\\packages\\chatgptsharp\\1.1.1\\chatgptsharp.1.1.1.nupkg.sha512",
     "C:\\Users\\szdxz\\.nuget\\packages\\clifx\\2.3.1\\clifx.2.3.1.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\szdxz\\Desktop\\ConsoleForVideo\\AutoRpa.csproj": {}
+    "E:\\SourceCode\\14-CodeTool\\ToolHelper\\06_ConsoleForVideo\\AutoRpa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\szdxz\\Desktop\\ConsoleForVideo\\AutoRpa.csproj": {
+    "E:\\SourceCode\\14-CodeTool\\ToolHelper\\06_ConsoleForVideo\\AutoRpa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szdxz\\Desktop\\ConsoleForVideo\\AutoRpa.csproj",
+        "projectUniqueName": "E:\\SourceCode\\14-CodeTool\\ToolHelper\\06_ConsoleForVideo\\AutoRpa.csproj",
         "projectName": "AutoRpa",
-        "projectPath": "C:\\Users\\szdxz\\Desktop\\ConsoleForVideo\\AutoRpa.csproj",
+        "projectPath": "E:\\SourceCode\\14-CodeTool\\ToolHelper\\06_ConsoleForVideo\\AutoRpa.csproj",
         "packagesPath": "C:\\Users\\szdxz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szdxz\\Desktop\\ConsoleForVideo\\obj\\",
+        "outputPath": "E:\\SourceCode\\14-CodeTool\\ToolHelper\\06_ConsoleForVideo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -80,15 +80,30 @@ namespace AutoRpa.Services
                             }
                             else
                             {
-                                // 判断文件是否存在，如果不存在则创建 
-                                var filePath = _options.Value.ChatGpt.TitlePath + x.Title + _options.Value.ChatGpt.TitleType;
-                                // var titleContent = _options.Value.ChatGpt.TitleHeader + msg.Response;
                                 var titleContent = _options.Value.ChatGpt.TitleHeader + msg.Response;
-                                await File.WriteAllTextAsync(filePath, titleContent);
-                                await console.Output.WriteLineAsync($"ChatGpt 生成文章完毕-{x.Title} ....");
+                                
+                                if (_options.Value.ChatGpt.IsUseFileStorage)
+                                {
+                                    await console.Output.WriteLineAsync($"ChatGpt 在本地生成文章-{x.Title} ....");
+                                    // 判断文件是否存在，如果不存在则创建 
+                                    var filePath = _options.Value.ChatGpt.TitlePath + x.Title + _options.Value.ChatGpt.TitleType;
+                                    // var titleContent = _options.Value.ChatGpt.TitleHeader + msg.Response;
+                                    await File.WriteAllTextAsync(filePath, titleContent);
+                                    await console.Output.WriteLineAsync($"ChatGpt 生成文章完毕-{x.Title} ....");
+                                }
+                                
+                                if (_options.Value.ChatGpt.IsUseSqlStorage)
+                                {
+                                    // 开始将文章上传数据库
+                                    await console.Output.WriteLineAsync($"ChatGpt 开始将文章上传数据库-{x.Title} ....");
+                                    x.Anser = titleContent;
+                                }
+
                                 // 更新数据库
                                 x.IsOk = 1;
                                 await _db.Updateable<TitleHot>(x).ExecuteCommandAsync();
+                                await console.Output.WriteLineAsync($"ChatGpt 更新数据库完毕数据库-{x.Title} ....\n");
+                                await console.Output.WriteLineAsync($"===========================================\n");
                             }
                         }
                         catch (Exception e)

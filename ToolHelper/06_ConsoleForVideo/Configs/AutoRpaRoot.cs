@@ -19,6 +19,8 @@
         public string Model { get; set; }
         public int OutTime { get; set; }
         public string SecretKey { get; set; }
+        public bool IsUseSqlStorage { get; set; }
+        public bool IsUseFileStorage { get; set; }
         public string TitleHeader { get; set; }
         public string TitlePath { get; set; }
         public string TitleType { get; set; }
